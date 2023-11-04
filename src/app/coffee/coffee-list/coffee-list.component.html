@@ -24,8 +24,8 @@
               <th scope="col">Regi&oacute;n</th>
             </tr>
           </thead>
-          <tbody *ngFor="let coffee of coffees">
-            <tr>
+          <tbody *ngFor="let coffee of coffees" class="body-content">
+            <tr class="fila">
               <th scope="row">{{coffee.id}}</th>
               <td>{{coffee.nombre}}</td>
               <td>{{coffee.tipo}}</td>
