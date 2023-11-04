@@ -1,3 +1,48 @@
-<p>
-  coffee-list works!
-</p>
+<div class="container-fluid contenido">
+  <div class="row px-3">
+      <div class="col text-start container-title">
+          <h1 id="main-title" class="titulo">El aroma m&aacute;gico</h1>
+      </div>
+      <div class="px-3">
+        <hr class="divisor">
+      </div>
+
+      <div>
+        <img src="../../../assets/image/coffee_home.png" class="img-fluid"
+          alt="Banner Plantas main" />
+      </div>
+      <div class="px-3">
+        <hr class="divisor">
+      </div>
+      <div class="table-container col-8">
+        <table class="table">
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Tipo</th>
+              <th scope="col">Regi&oacute;n</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let coffee of coffees">
+            <tr>
+              <th scope="row">{{coffee.id}}</th>
+              <td>{{coffee.nombre}}</td>
+              <td>{{coffee.tipo}}</td>
+              <td>{{coffee.region}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+  </div>
+  <div class="row mt-3">
+    <div class="container" class="footer-aroma">
+      <footer>
+        <div class="text-center footer-content">
+          Contact us: +57 3102105253 - info@elaromamagico.com - @elaromamagico
+        </div>
+      </footer>
+    </div>
+  </div>
+</div>
