@@ -10,7 +10,8 @@ import { CoffeeService } from '../coffee.service';
 export class CoffeeListComponent implements OnInit {
 
   coffees: Array<Coffee> = [];
-
+  sumOrigen: number = 0;
+  sumBlend: number = 0;
   constructor(private coffeeService: CoffeeService) { }
 
   ngOnInit() {
@@ -20,7 +21,13 @@ export class CoffeeListComponent implements OnInit {
   getCoffees() {
     this.coffeeService.getCoffees().subscribe(coffees => {
       this.coffees = coffees;
+      this.getCountCoffees(coffees);
     });
+  }
+
+  getCountCoffees(coffees: Array<Coffee>): void {
+    this.sumOrigen = coffees.filter(coffee => coffee.tipo === 'Café de Origen').length;
+    this.sumBlend = coffees.filter(coffee => coffee.tipo === 'Blend').length;
   }
 
 }
